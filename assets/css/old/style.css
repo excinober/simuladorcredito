@@ -1,0 +1,854 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  
+}
+
+body {
+  font-size: 1.6rem;
+  /*background-color:#F2F2F2;*/
+}
+
+a {
+  color: #D37D20;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+}
+
+/* remove “X” from search input field */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+
+.efectoImagen {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition: all 400ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+    .efectoImagen:hover{
+               -moz-transform: scale(1.1);
+               -webkit-transform: scale(1.1);
+               -o-transform: scale(1.1);
+               -ms-transform: scale(1.1);
+               transform: scale(1.1);
+       }
+
+
+.paddingOff{
+	padding:0 !important
+	}
+.destacar-texto{
+	color:#D37D20;
+	}	   
+
+.alinear{
+	display:inline-block !important
+	}
+
+.texto-secundario{
+	font-size:13px !important;
+	margin-left:10px;
+	}
+	
+.texto-terciario{
+	font-size:13px !important;
+	margin-bottom:0 !important;
+	}
+  
+  /*MODIFICADOR HOVER MENU DESPLEGABLE - DROPDOWN*/
+@media (min-width: 991px) {
+			.dropdown:hover .dropdown-menu {
+			display: block;
+			}
+		}
+   
+/* -------------------------------- | CONTENEDORES | -------------------------------- */
+
+.content-page {
+  padding: 0 2%;
+  margin:25px;
+}
+
+.box-destacados{
+	border-top:4px solid #D37D20;
+	padding:1.5% 0 1.5% 0;
+	margin-top:15px;
+	background-color:#fff;
+	}
+	
+	.box-destacados h2{
+		color:#D37D20;
+		font-size:35px;
+		font-weight:bold;
+		margin-bottom:15px;
+		}
+	
+	.box-destacados h3{
+		color:#CA4F24;
+		font-size:20px;
+		font-weight:300;
+		margin:15px 0;
+		}
+	
+	.box-destacados h4{
+		color:#CA4F24;
+		font-size:17px;
+		font-weight:300;
+		margin:15px 0;
+		}
+	
+	.box-destacados p{
+		color: #666666;
+		font-size: 16px;
+    	line-height: 20px;
+	}
+
+.box-producto-destacado{
+	background-color:#FDF1E5;
+	padding:12px;
+	}
+
+.box-info-legal{
+	background-color:#2A2E30;
+	padding:15px;
+	margin-bottom:15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	}
+
+	
+/* -------------------------------- | PRODUCTO LISTA | -------------------------------- */
+
+.header-productos h1{
+	font-size:25px;
+	color:#D37D21;
+	border-bottom:#D37D21 1px solid;
+	font-weight:300;
+	padding:7px 0;
+	margin-bottom:7px;
+	}
+
+.header-productos h2{
+	font-size:18px;
+	color:#585857;
+	border-bottom:#585857 1px solid;
+	font-weight:300;
+	padding:7px 0;
+	margin-bottom:7px;
+	}
+	
+	.header-productos ul li{
+		color:#666;
+		font-size:15px;
+		border-bottom:#CECECE 1px dashed;
+		padding:10px 0;
+		font-weight:300;
+	}
+	
+	.header-productos ul li a{
+		color:#666;
+	}
+
+	.header-productos ul li a:hover{
+		color:#D37D21;
+	}
+
+
+	.header-productos input[type="checkbox"]{
+		position:static !important;
+		}
+	.header-productos label{
+		font-size:15px;
+		margin-bottom:4px;
+		font-weight:300;
+		}
+
+.header-productos h3{
+	font-size:15px;
+	color:#777;
+	margin-bottom:30px;
+	}
+
+.btn-filtro{
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border: #D37D20 1px solid;
+	padding:7px;
+	color: #D37D20 !important;
+	background-color:#fff;
+	margin:10px 0;
+	width:100%;
+	}
+
+
+	.btn-filtro:hover{
+	color: #fff !important;
+	background-color:#D37D20;
+	}
+
+.precio-anterior{
+	text-decoration: line-through;
+	color: #757575;
+	font-size:12px !important;
+	margin-top:15px;
+	}
+
+.precio{
+	color: #D37D20 !important;
+	font-size:22px !important;
+	}
+
+
+.caption .precio{
+	color: #D37D20 !important;
+	font-size:18px !important;
+	}
+
+
+/* -------------------------------- | PRODUCTO| -------------------------------- */
+
+.box-productos p{
+	font-size: 1.5rem;
+    font-weight: 300;
+	margin-bottom:15px;
+	line-height:2.1rem;
+	}
+
+
+.box-productos li{
+	font-size: 1.5rem;
+    font-weight: 300;
+	margin-bottom:3px;
+	line-height:2.1rem;
+	}
+
+
+.box-productos h1{
+	color:#D37D21;
+	font-size: 3rem;
+	margin-bottom:10px;
+	}
+
+.box-productos h2{
+	color:#D37D21;
+	font-size: 2.5rem;
+	margin-bottom:20px;
+	 font-weight: 300;
+	}
+
+.box-productos h3{
+	color:#D37D21;
+	font-size: 2rem;
+	margin-bottom:20px;
+	 font-weight: 300;
+	}
+
+
+.box-productos ul, .box-productos ol{
+	padding-left:20px;
+	}
+
+.box-productos ul li{
+	list-style-type: disc;
+	}
+
+.box-productos ol li{
+	list-style-type: decimal
+	}
+	
+.box-productos label{
+	font-size: 1.5rem;
+    font-weight: 300;
+	line-height:2.1rem;
+	}
+	
+.adorno{
+	font-size:150px;
+	color:#CBCBCB;
+	}
+
+.btn-comprar{
+	background-color:#D37D21;
+	color:#fff;
+	padding:7px;
+	}
+
+.unidades{
+	display: inline-block !important;
+    width: auto;
+	margin-bottom:7px;
+	}
+
+/* -------------------------------- | BOTONES | -------------------------------- */
+.ver-todos{
+	background-color:#585857;
+	color:#fff;
+	text-align:center;
+	margin-top:15px;
+	}
+	
+	.ver-todos:hover{
+	background-color:#D37D20;
+	color:#fff !important;
+	}
+
+/* -------------------------------- | MENU DE INGRESO | -------------------------------- */
+
+.content-menu {
+  padding: 0.5em 5%;
+}
+
+
+/* -------------------------------- | BUSCADOR Y CARRO HEADER | -------------------------------- */
+
+.cabecera-logo{
+	position: absolute;
+	z-index:3;
+	background-color:rgba(255,255,255,0.8);
+	top:67px;
+	width:100%;
+	}
+
+@media (max-width: 992px) {
+  .cabecera-logo {
+    position: relative;
+    top:0;
+	}
+	
+	.cabecera-logo img{
+		margin:0 auto;
+		height:auto;
+		width:55%;
+		}
+}
+
+
+@media (max-width: 775px) {
+	
+	.cabecera-logo img{
+		margin:0 auto;
+		height:auto;
+		width:75%;
+		}
+}
+
+.cabecera-logo .form-control{
+	display: inline-block !important;
+	width:auto;
+	}
+
+	@media (max-width: 775px) {
+			.cabecera-logo .form-control{
+				margin-top:15px;
+			}
+		}
+
+
+.btn-mi-carrito{
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border: #D37D20 1px solid;
+	padding:7px;
+	display: inline-block;
+	color: #D37D20;
+	background-color:#fff;
+	margin:10px 0;
+	float:right;
+	}
+	
+	.btn-mi-carrito:hover{
+	color:#fff;
+	background-color:#767A7C;
+	border: #767A7C 1px solid;
+	}
+	
+	.btn-mi-carrito .cantidad{
+		background-color:#D37D20;
+		color:#fff;
+		padding:3px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		text-align:center;
+		}
+
+	@media (max-width: 991px) {
+	
+		.btn-mi-carrito{
+			float:none;
+		}
+	}
+
+
+.buscador{
+	margin:10px 0;
+	}
+	
+.buscador i{
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background-color:#D37D20;
+	color:#fff;
+	padding:8px;
+	}
+	
+	
+	
+/* -------------------------------- | SLIDE | -------------------------------- */
+.slide{
+	position: relative !important;
+	z-index:2;
+	}
+
+
+.slide img{
+	width:100%;
+	height:auto;
+	}
+
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 15px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+.promesa-slide{
+	position: absolute;
+	z-index:3;
+	width:30%;
+	height:auto;
+	bottom:5%;
+	left:5%;
+	}
+	
+.promesa-slide img{
+	margin-bottom:15px;
+	}
+
+/* -------------------------------- | BANNERS | -------------------------------- */
+.banner-interno{
+	margin-top:74px;
+	}
+	
+	@media (max-width: 991px) {
+			.banner-interno{
+				margin-top:0;
+			}
+		}
+
+/* -------------------------------- | FORMATO DE TEXTO | -------------------------------- */
+.box-texto-pagina{
+	padding:0 10%;
+	margin:25px 0;
+	}
+
+.box-texto-pagina p, .box-texto-pagina li{
+	font-size: 1.7rem;
+    font-weight: 300;
+	margin-bottom:15px;
+	line-height:2.5rem;
+	}
+
+.box-texto-pagina label{
+	font-size: 1.7rem;
+    font-weight: 300;
+	margin-bottom:7px;
+	line-height:2.5rem;
+	}
+
+
+.box-texto-pagina h1{
+	color:#D37D21;
+	font-size: 5rem;
+	margin-bottom:20px;
+	}
+
+.box-texto-pagina h2{
+	color:#D37D21;
+	font-size: 4.5rem;
+	margin-bottom:20px;
+	 font-weight: 300;
+	}
+
+.box-texto-pagina h3{
+	color:#D37D21;
+	font-size: 4rem;
+	margin-bottom:20px;
+	 font-weight: 300;
+	}
+
+.box-texto-pagina h4{
+	color:#D37D21;
+	font-size: 3.5rem;
+	margin-bottom:20px;
+	 font-weight: 300;
+	}
+	
+.box-texto-pagina h5{
+	color:#D37D21;
+	font-size: 3rem;
+	margin-bottom:20px;
+	 font-weight: 300;
+	}
+
+.box-texto-pagina ul, .box-texto-pagina ol{
+	padding-left:20px;
+	}
+
+.box-texto-pagina ul li{
+	list-style-type: disc;
+	}
+
+.box-texto-pagina ol li{
+	list-style-type: decimal
+	}
+
+/* -------------------------------- 
+
+MENU CATEGORIAS
+
+-------------------------------- */
+/*!
+ * Yamm!3 - Yet another megamenu for Bootstrap 3
+ * http://geedmo.github.com/yamm3
+ * 
+ * @geedmo - Licensed under the MIT license
+ */
+.yamm .nav,
+.yamm .collapse,
+.yamm .dropup,
+.yamm .dropdown {
+  position: static;
+}
+.yamm .container {
+  position: relative;
+}
+.yamm .dropdown-menu {
+  left: auto;
+}
+.yamm .yamm-content {
+  padding: 20px 30px;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+  left: 0;
+  right: 0;
+}
+
+
+.tituloCategorias{
+	padding:7px;
+	font-size:18px;
+	color:#fff;
+	background-color:#D37D20;
+	}	
+
+.tituloCategorias a{
+	color:#fff !important;
+	cursor:pointer;
+	}
+
+
+
+
+
+/*MODIFICADORES BOOTSTRAP*/
+
+.menu-categorias .navbar-default {
+  background-color: #585857;
+ /* background-color: #E6E6E6;*/
+  border-bottom:#D37D20 3px solid;
+  
+}
+	
+
+
+.menu-categorias .navbar-default .navbar-nav > li > a > center > i{
+	text-align:center;
+	font-size:57px;
+	/*font-size:67px;*/
+}
+
+@media (min-width: 768px){
+	.menu-categorias .navbar-nav > li > a {
+		padding: 23px;
+		/* padding-bottom: 15px; */
+	}
+}
+
+/*COLOR DE ESTADO DE BOTONES*/
+.menu-categorias .navbar-default .navbar-nav > li > a{
+    color:#DCDCDC;
+	 /*color:#999999;*/
+	background-color:transparent;
+}
+
+
+	.menu-categorias .navbar-default .navbar-nav > li > a:hover{
+		color: #fff;
+		background-color: #D37D20;
+	}
+	
+	
+	.menu-categorias .navbar-default .navbar-nav > li > a:focus {
+		color: #fff;
+		background-color: #D66B00;
+	}
+	
+	
+	.menu-categorias .active {
+		color: #fff;
+		background-color: #D37D20;
+	}
+	
+	
+	
+/*ESPACIO LISTA DE SUBCATEGORIAS*/
+.menu-categorias .dropdown-menu{
+	border-top:#D37D20 2px solid;
+	border-bottom:none !important;
+	}
+
+.box-subcategorias{
+	padding:1.3%;
+	}
+
+.box-subcategorias h3{
+	color: #D37D20;
+    font-size: 1.6rem;
+    pointer-events: none;
+	}
+.box-subcategorias li a{
+    line-height: 25px;
+    height: 25px;
+    font-size: 1.3rem;
+    padding-left: 0;
+	color:#111433 !important;
+	}
+	
+	.box-subcategorias li a:hover{
+	color:#D66B00 !important;
+	}
+
+.btn-ver-mas{
+	color: #fff;
+	background-color: #D66B00;
+	padding:7px;
+	display:inline-block;
+	font-size: 1.2rem;
+	}
+
+.divider-sub-categoria{
+	margin:10px;
+	border:1px #D8D8D8 dashed;
+	}
+
+/* -------------------------------- | SLIDE MARCAS | -------------------------------- */
+
+.marcas-aliadas h2{
+	font-size:44px;
+	color:#4D4D4D;
+	text-align:center;
+	font-weight:300;
+	margin:45px 0;
+	}
+
+.marcas-aliadas .flechas i{
+	font-size:35px;
+	margin: 150% 0;
+	text-align:center !important;
+	    /*display: block;*/
+	}
+
+	@media (max-width: 992px) {
+	
+		.marcas-aliadas .flechas i{
+			margin:0;
+		}
+	}
+
+
+/* -------------------------------- | CATEGORIAS DESTACADAS CARRUSEL | -------------------------------- */
+
+/* Page Header */
+.page-header {
+    background: #f9f9f9;
+    margin: -30px -40px 40px;
+    padding: 20px 40px;
+    border-top: 4px solid #ccc;
+    color: #999;
+    text-transform: uppercase;
+}
+    
+.page-header h3 {
+    line-height: 0.88rem;
+    color: #000;
+}
+
+ul.thumbnails { 
+    margin-bottom: 0px;
+}
+
+
+
+/* Carousel Control */
+.control-box {
+    text-align: right;
+    width: 100%;
+}
+.carousel-control{
+    background: #666;
+    border: 0px;
+    border-radius: 0px;
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 200;
+    line-height: 18px;
+    opacity: 0.5;
+    padding: 4px 10px 0px;
+    position: static;
+    height: 30px;
+    width: 15px;
+}
+
+
+
+/* Mobile Only */
+@media (max-width: 767px) {
+    .page-header, .control-box {
+        text-align: center;
+    } 
+}
+@media (max-width: 479px) {
+    .caption {
+        word-break: break-all;
+    }
+}
+
+
+li { list-style-type:none;}
+
+::selection { background: #D37D20; color: #FFFFFF; text-shadow: 0; }
+::-moz-selection { background: #ff5e99; color: #FFFFFF; }
+
+
+/* -------------------------------- | FOOTER | -------------------------------- */
+
+.promesa{
+	font-size:16px;
+	color:#999999;
+	text-align:center;
+	padding:25px 0;
+	background-color:#F7F7F8;
+	margin-top:30px;
+	}
+
+.promesa i{
+	font-size:35px;
+	display:block;
+	}
+
+footer{
+	background-color:#585857;
+	border-top: 4px solid #D37D20;
+	color:#fff;
+	padding:2%;
+	}
+	@media (max-width: 992px) {
+	  footer{
+		padding:2.5%;
+		}
+	
+	}
+
+	footer p{
+		margin-bottom:25px;
+		}
+		
+	footer h3{
+    	margin-bottom: 0.75rem;
+    	color: #fff;
+    	font-size: 18px ;
+    	font-weight: 700;
+	}
+	
+	footer ul li a{
+		display: inline-block;
+		color: #CCC;
+		margin-bottom: 0.5rem;
+		font-size:14px
+	}
+	
+	footer ul li a:hover{
+		color: #fff;
+	}
+		
+.pago-seguro{
+	/*width:50%;
+	height:auto;*/
+	margin-top:15px;
+	display:inline-block
+	}		
+
+.redes-sociales-footer{
+	display:inline-block;
+	margin-top:15px;
+	font-size:30px;
+	}
+
+.newslatter{
+	background-color:#D37D20;
+	padding:15px !important;
+	}
