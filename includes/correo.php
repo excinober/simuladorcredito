@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
         
-        $content = "Nombres: $credito\n";
-        $content = "Nombres: $monto\n";
-        $content = "Nombres: $plazo\n";
+        $content = "Credito: $credito\n";
+        $content = "Monto: $monto\n";
+        $content = "Plazo: $plazo\n";
         $content = "Nombres: $names\n";
         $content .= "Apellidos:$lastname\n";
         $content .= "Tipo de documento:$typeDocument\n";
