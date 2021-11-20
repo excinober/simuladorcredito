@@ -83,18 +83,20 @@
                                     <div class="col-xxl-6 col-xl-8">
 
                                         <h5 class="card-title mb-4">Introduzca la información</h5>
-                                        <form id="form-simulacion1">
+                                        <form id="form-simulacion1" action="../includes/correo.php" method="POST">
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="inputUsername">Seleccione el producto de
                                                     crédito</label>
-                                                <select class="form-select" aria-label="Default select example" id="credito" name="credito" required>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    id="credito" name="credito" required>
                                                     <option selected disabled value="">Seleccionar</option>
                                                     <?php 
                                                     if (count($creditoLista)>0) {
                                                         foreach ($creditoLista as $creditos) {
 		  		                                     ?>
-                                                        <option value="<?=$creditos['idcredito']?>"><?=$creditos['nombre']?></option>
-	  		                                        <?php
+                                                    <option value="<?=$creditos['idcredito']?>"><?=$creditos['nombre']?>
+                                                    </option>
+                                                    <?php
 			                                             }
                                                     }
 			  	                                    ?>
@@ -105,22 +107,25 @@
                                                     <label class="small mb-1" for="montoCredito">Ingrese el monto del
                                                         crédito</label>
                                                     <input class="form-control" id="montoCredito" type="number"
-                                                        placeholder="10000000" value="" min="0" required/>
+                                                        placeholder="10000000" value="" min="0" name="monto" required />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="plazoCredito">Ingrese el número de meses en que desea pagar</label>
+                                                    <label class="small mb-1" for="plazoCredito">Ingrese el número de
+                                                        cuotas que desea pagar</label>
                                                     <input class="form-control" id="plazoCredito" type="number"
-                                                        placeholder="48" value="" min="0" required />
+                                                        placeholder="48" value="" min="0" name="plazo" required />
                                                 </div>
                                             </div>
 
                                             <hr class="my-4" />
                                             <div class="d-flex justify-content-between">
-                                                <a onclick="javascript: window.history.back();" class="btn btn-muted" type="button">Volver</a>
+                                                <a onclick="javascript: window.history.back();" class="btn btn-muted"
+                                                    type="button">Volver</a>
                                                 <!-- <button class="btn btn-warning" type="button" id="btn-calcular">Calcular</button> -->
-                                                <input class="btn btn-lg btn-warning" type="button" id="btn-calcular" value="Calcular">
+                                                <input class="btn btn-lg btn-warning" type="button" id="btn-calcular"
+                                                    value="Calcular">
                                             </div>
-                                        </form>
+                                            <!--</form>-->
                                     </div>
                                 </div>
                             </div>
@@ -131,65 +136,69 @@
                                     <div class="col-xxl-14 col-xl-14">
                                         <h3 class="text-primary"></h3>
                                         <h5 class="card-title mb-4"></h5>
-                                        <form>
-                                            <div class="container-x1 px-1 mt-n9">
-                                                <div class="card mb-4">
-                                                    <div class="card-header">Amortización</div>
-                                                    <div class="card-body">
-                                                        <div
-                                                            class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
 
-                                                            <div class="dataTable-container">
-                                                                <table id="tabla-amortizacion" class="dataTable-table">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th data-sortable="" style="width: auto"><a
-                                                                                    href="#"
-                                                                                    class="dataTable-sorter">NO.</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href=" #"
-                                                                                    class="dataTable-sorter">FECHA</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href="#"
-                                                                                    class="dataTable-sorter">CUOTA</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href=" #"
-                                                                                    class="dataTable-sorter">AB.CAPITAL</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href=" #"
-                                                                                    class="dataTable-sorter">AB.INTERES</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href=" #"
-                                                                                    class="dataTable-sorter">SDO.CAPITAL</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href=" #"
-                                                                                    class="dataTable-sorter"><span id="val_seg">0</span>% - SEGUR</a>
-                                                                            </th>
-                                                                            <th data-sortable=""
-                                                                                style="text-align: center;"><a href=" #"
-                                                                                    class="dataTable-sorter"><span id="val_fondo">0</span>% - FOND</a>
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
+                                        <div class="container-x1 px-1 mt-n9">
+                                            <div class="card mb-4">
+                                                <div class="card-header">Amortización</div>
+                                                <div class="card-body">
+                                                    <div
+                                                        class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
 
-                                                                    <tbody>
+                                                        <div class="dataTable-container">
+                                                            <table id="tabla-amortizacion" class="dataTable-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th data-sortable="" style="width: auto"><a
+                                                                                href="#"
+                                                                                class="dataTable-sorter">NO.</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">FECHA</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href="#"
+                                                                                class="dataTable-sorter">CUOTA</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">AB.CAPITAL</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">AB.INTERES</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">SDO.CAPITAL</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter"><span
+                                                                                    id="val_seg">0</span>% -
+                                                                                SEGUR</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter"><span
+                                                                                    id="val_fondo">0</span>% -
+                                                                                FOND</a>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
 
-                                                                        
+                                                                <tbody>
 
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
+
+
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -199,92 +208,64 @@
                                 <div class="row justify-content-center">
                                     <div class="col-xxl-6 col-xl-8">
                                         <h3 class="text-primary">Complete su información</h3>
-                                        <form>
-                                            <div class="row gx-3">
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="names">Nombres</label>
-                                                    <input class="form-control" id="names" type="text"
-                                                        placeholder="Introduzca sus nombres" value="Valerie" />
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="surnames">Apellidos</label>
-                                                    <input class="form-control" id="surnames" type="text"
-                                                        placeholder="Introduzca sus apellidos" value="Luna" />
-                                                </div>
-                                            </div>
-                                            <div class="row gx-3">
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="inputUsername">Seleccione un
-                                                        departamento</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected disabled>Seleccionar</option>
-                                                        <option value="1">Valle del cauca</option>
-                                                        <option value="2">Antioquía</option>
-                                                        <option value="3">Boyacá</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="inputUsername">Seleccione una
-                                                        ciudad</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected disabled>Seleccionar</option>
-                                                        <option value="1">Cali</option>
-                                                        <option value="2">Medellín</option>
-                                                        <option value="3">Tunja</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row gx-3">
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="TypeDocument"
-                                                        id="TypeDocument">Seleccione tipo de
-                                                        documento</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected disabled>Seleccionar</option>
-                                                        <option value="1">Cedula ciudadania</option>
-                                                        <option value="2">Pasaporte</option>
-                                                        <option value="3">Licencia</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="small mb-1" for="inputUsername">Introduzca numero de
-                                                        documento</label>
-                                                    <input class="form-control" id="inputNumberDocument" type="number"
-                                                        placeholder="Introduzca numero de documento"
-                                                        value="1005978380" />
 
-                                                </div>
+                                        <div class="row gx-3">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="small mb-1" for="names">Nombres</label>
+                                                <input class="form-control" id="names" type="text" name="names"
+                                                    placeholder="Introduzca sus nombres" value="" require />
                                             </div>
-                                            <div class="mb-3">
-                                                <label class="small mb-1" for="inputEmailAddress">Correo
-                                                    Electronico</label>
-                                                <input class="form-control" id="inputEmailAddress" type="email"
-                                                    placeholder="Introduzca un correo electronico"
-                                                    value="name@example.com" />
+                                            <div class=" mb-3 col-md-6">
+                                                <label class="small mb-1" for="surnames">Apellidos</label>
+                                                <input class="form-control" id="surnames" type="text" name="lastname"
+                                                    placeholder="Introduzca sus apellidos" value="" />
                                             </div>
-                                            <div class="row gx-3">
-                                                <div class="col-md-6 mb-md-0">
-                                                    <label class="small mb-1" for="inputPhone">Numero de
-                                                        telefono</label>
-                                                    <input class="form-control" id="inputPhone" type="tel"
-                                                        placeholder="Introduzca un numero de telefono"
-                                                        value="310-723-4567" />
-                                                </div>
-                                                <div class="col-md-6 mb-0">
-                                                    <label class="small mb-1" for="inputBirthday">Fecha de
-                                                        nacimiento</label>
-                                                    <input class="form-control" id="inputBirthday" type="date"
-                                                        name="birthday" placeholder="Introduzca una fecha de nacimiento"
-                                                        value="06/10/1988" />
-                                                </div>
+                                        </div>
+                                        <div class="row gx-3">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="small mb-1" for="TypeDocument"
+                                                    id="TypeDocument">Seleccione tipo de
+                                                    documento</label>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="typeDocument">
+                                                    <option selected disabled>Seleccionar</option>
+                                                    <option value="Cedula ciudadania">Cedula ciudadania</option>
+                                                    <option value="Pasaporte">Pasaporte</option>
+                                                    <option value="Licencia">Licencia</option>
+                                                </select>
                                             </div>
-                                            <hr class="my-4" />
-                                            <div class="d-flex justify-content-between">
-                                                <button class="btn btn-light disabled" type="button"
-                                                    disabled>Volver</button>
-                                                <button class="btn btn-warning" type="button">Finalizar</button>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="small mb-1" for="inputUsername">Numero de
+                                                    documento</label>
+                                                <input class="form-control" id="inputNumberDocument" type="number"
+                                                    name="numberDocument" placeholder="Introduzca numero de documento"
+                                                    value="" />
                                             </div>
+                                        </div>
+                                        <div class="row gx-3">
+                                            <div class="col-md-6 mb-md-0">
+                                                <label class="small mb-1" for="inputPhone">Numero de
+                                                    telefono</label>
+                                                <input class="form-control" id="inputPhone" type="tel" name="phone"
+                                                    placeholder="Introduzca un numero de telefono" value="" />
+                                            </div>
+                                            <div class="col-md-6 mb-0">
+                                                <label class="small mb-1" for="inputEmail">Correo
+                                                    electronico</label>
+                                                <input class="form-control" id="inputEmail" type="email" name="email"
+                                                    placeholder="Introduzca un correo electronico" value="" />
+                                            </div>
+                                        </div>
+                                        <hr class="my-4" />
+                                        <div class="d-flex justify-content-between">
+                                            <button class="btn btn-light disabled" type="button">Volver</button>
+                                            <input class="btn btn-warning" type="submit" value="Finalizar"
+                                                name="enviar"></input>
+                                        </div>
                                         </form>
+                                        <?
+                                        include("correo.php");
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -315,38 +296,39 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-
         var monto_max = 0;
         var plazos = 0;
         var tasa = 0;
         var fondo_mutual = 0;
         var seguro_linea = 0;
 
-        $('#btn-calcular').click( function(event){
+        $('#btn-calcular').click(function (event) {
 
-            event.preventDefault();  
+            event.preventDefault();
 
-            if ($("#form-simulacion1")[0].checkValidity() ){
-                
+            if ($("#form-simulacion1")[0].checkValidity()) {
+
                 //console.log(tasa);
                 setAmortizacion();
 
                 $("#wizard2-tab")[0].click();
-            
-            }else
-                $("#form-simulacion1")[0].reportValidity()           
+
+            } else
+                $("#form-simulacion1")[0].reportValidity()
         });
 
-        $('#credito').change(function(){
+        $('#credito').change(function () {
             var id = $(this).val()
 
             $.ajax({
-                method  : 'POST',
-                url     : 'Simulacion2/' + id,
-                data: {	id : id},
+                method: 'POST',
+                url: 'Simulacion2/' + id,
+                data: {
+                    id: id
+                },
                 dataType: 'json',
-			    async: false,
-                success   : function(data){
+                async: false,
+                success: function (data) {
                     console.log(data);
 
                     monto_max = data[0].monto_max;
@@ -363,13 +345,13 @@
                 }
             });
 
-        });  
+        });
 
 
-        function setAmortizacion(){
-            var tabla  = $('#tabla-amortizacion tbody');
-            var plazo  = $('#plazoCredito').val();
-            var monto  = $('#montoCredito').val();
+        function setAmortizacion() {
+            var tabla = $('#tabla-amortizacion tbody');
+            var plazo = $('#plazoCredito').val();
+            var monto = $('#montoCredito').val();
 
             var filas = "";
             var fecha = moment().format("DD/MM/YYYY");
@@ -388,18 +370,18 @@
             //fee_fondo_mutual = 
 
 
-            filas += '<tr>'+
-                            '<td style="text-align: right;">0</td>'+
-                            '<td style="text-align: right;">'+fecha+'</td>'+
-                            '<td style="text-align: right;">0</td>'+
-                            '<td style="text-align: right;">0</td>'+
-                            '<td style="text-align: right;">0</td>'+
-                            '<td style="text-align: right;">'+currency(saldo)+'</td>'+
-                            '<td style="text-align: right;">0</td>'+
-                            '<td style="text-align: right;">0</td>'+
-                        '</tr>';
+            filas += '<tr>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">' + fecha + '</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">' + currency(saldo) + '</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '</tr>';
 
-            for(x=1; x <= plazo; x++){
+            for (x = 1; x <= plazo; x++) {
 
                 // aquí calcular las variables
                 abono_interes = saldo * tasa;
@@ -410,34 +392,37 @@
                 saldo = saldo - abono_capital;
                 fecha = moment().add(x, 'M').format("DD/MM/YYYY");
 
-                filas += '<tr>'+
-                            '<td style="text-align: right;">'+x+'</td>'+
-                            '<td style="text-align: right;">'+fecha+'</td>'+
-                            '<td style="text-align: right;">'+currency(cuota_fija)+'</td>'+
-                            '<td style="text-align: right;">'+currency(abono_capital)+'</td>'+
-                            '<td style="text-align: right;">'+currency(abono_interes)+'</td>'+
-                            '<td style="text-align: right;">'+currency(saldo)+'</td>'+
-                            '<td style="text-align: right;">'+currency(fee_seguro)+'</td>'+
-                            '<td style="text-align: right;">'+currency(fee_fondo_mutual)+'</td>'+
-                        '</tr>';
+                filas += '<tr>' +
+                    '<td style="text-align: right;">' + x + '</td>' +
+                    '<td style="text-align: right;">' + fecha + '</td>' +
+                    '<td style="text-align: right;">' + currency(cuota_fija) + '</td>' +
+                    '<td style="text-align: right;">' + currency(abono_capital) + '</td>' +
+                    '<td style="text-align: right;">' + currency(abono_interes) + '</td>' +
+                    '<td style="text-align: right;">' + currency(saldo) + '</td>' +
+                    '<td style="text-align: right;">' + currency(fee_seguro) + '</td>' +
+                    '<td style="text-align: right;">' + currency(fee_fondo_mutual) + '</td>' +
+                    '</tr>';
 
                 monto = monto - cuota;
             }
-            
-            tabla.html( filas );
+
+            tabla.html(filas);
 
         }
 
 
-        function calculateFixedFee(monto, tasa, plazo){
-             
-            return monto * ((tasa * Math.pow((1 + tasa),plazo)) / (Math.pow((1+tasa),plazo) - 1));
+        function calculateFixedFee(monto, tasa, plazo) {
+
+            return monto * ((tasa * Math.pow((1 + tasa), plazo)) / (Math.pow((1 + tasa), plazo) - 1));
         }
 
-        function currency(value){
-            return new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 2}).format(value);
+        function currency(value) {
+            return new Intl.NumberFormat('es-ES', {
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 2
+            }).format(value);
         }
-    
-    </script>  
-        
+    </script>
+
 </html>
