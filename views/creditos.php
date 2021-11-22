@@ -83,7 +83,7 @@
                                     <div class="col-xxl-6 col-xl-8">
 
                                         <h5 class="card-title mb-4">Introduzca la información</h5>
-                                        <form id="form-simulacion1" action="../includes/correo.php" method="POST">
+                                        <form id="form-simulacion1" action="includes/correo.php" method="POST">
                                             <div class="mb-3">
                                                 <label class="small mb-1" for="inputUsername">Seleccione el producto de
                                                     crédito</label>
