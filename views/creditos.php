@@ -264,9 +264,10 @@
                                 </div>
                                 <hr class="my-4" />
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn btn-light disabled" type="button"></button>
-                                    <input class="btn btn-warning" type="submit" value=""
-                                        name="enviar">Finalizar</input>
+                                    <a onclick="javascript: window.history.back();" class="btn btn-muted"
+                                        type="button"></a>
+                                    <input class="btn btn-warning" type="submit" value="Finalizar"
+                                        name="enviar"></input>
                                 </div>
                                 </form>
                                 <?
@@ -302,7 +303,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-
         function changeTab() {
             var notNext = document.getElementById("wizard2-tab")
             var notNext2 = document.getElementById("wizard3-tab")
