@@ -1,9 +1,9 @@
 /*!
- * Start Bootstrap - SB Admin Pro v2.0.2 (https://shop.startbootstrap.com/product/sb-admin-pro)
- * Copyright 2013-2021 Start Bootstrap
- * Licensed under SEE_LICENSE (https://github.com/StartBootstrap/sb-admin-pro/blob/master/LICENSE)
- */
-window.addEventListener('DOMContentLoaded', event => {
+    * Start Bootstrap - SB Admin Pro v2.0.2 (https://shop.startbootstrap.com/product/sb-admin-pro)
+    * Copyright 2013-2021 Start Bootstrap
+    * Licensed under SEE_LICENSE (https://github.com/StartBootstrap/sb-admin-pro/blob/master/LICENSE)
+    */
+    window.addEventListener('DOMContentLoaded', event => {
     // Activate feather
     feather.replace();
 
@@ -82,5 +82,4 @@ window.addEventListener('DOMContentLoaded', event => {
         }
         targetAnchor.classList.add('active');
     });
-
 });

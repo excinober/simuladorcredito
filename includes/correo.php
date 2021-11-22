@@ -25,12 +25,13 @@
     }
 }*/
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $mail_to = "deiby.developer@gmail.com";
         $credito= ($_POST["credito"]);
-        $monto= ($_POST["monto"]);
-        $monto= ($_POST["plazo"]);
+        $monto = ($_POST["monto"]);
+        $plazo = ($_POST["plazo"]);
         $lastname = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["lastname"])));
         $names = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["names"])));
         $typeDocument = trim($_POST["typeDocument"]);
@@ -45,7 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         OR empty($_POST['monto'])
         OR empty($_POST['plazo']) 
         OR empty($_POST['phone'])) {
-            echo "<h4>Por favor completa el formulario y vuelve a intentarlo.</h4>";
+            echo '<script type="text/javascript">
+        alert("Por favor verifique la información");
+        window.location.href="creditos.php";
+        </script>';
+
             exit;
         }
         
@@ -64,13 +69,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $success = mail($mail_to, "Solicitud de credito", $content, $headers);
 
         if ($success) {
-            echo "<h4>¡Gracias! Tu mensaje ha sido enviado.</h4>";
-        } else {
-            echo "<h4>Oops! Algo salió mal, no pudimos enviar tu mensaje.</h4>";
-        }
+            echo '<script type="text/javascript">
+        alert("Se envio exitosamente");
+        window.location.href="creditos.php";
+        </script>';
 
+        } else {
+            echo '<script type="text/javascript">
+        alert("Ups, algo ha salido mal, no pudimos enviar tu mensaje");
+        window.location.href="creditos.php";
+        </script>';
+
+        }
     } else {
-        echo "<h4>Hubo un problema con tu envío, intenta de nuevo.</h4>";
+        echo '<script type="text/javascript">
+        alert("Hubo un problema con tu envio, intentalo nuevamente");
+        window.location.href="creditos.php";
+        </script>';
     }
 
 ?>

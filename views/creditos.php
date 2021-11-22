@@ -16,6 +16,7 @@
     </script>
 </head>
 
+
 <body class="nav-fixed">
     <div id="layoutSidenav_content">
         <main>
@@ -55,17 +56,26 @@
                             </a>
                             <!-- Wizard navigation item 2-->
                             <a class="nav-item nav-link" id="wizard2-tab" href="#wizard2" data-bs-toggle="tab"
-                                role="tab" aria-controls="wizard2" aria-selected="true">
+                                role="tab" aria-controls="wizard2" aria-selected="true" disabled="true">
                                 <div class="wizard-step-icon">2</div>
                                 <div class="wizard-step-text">
                                     <div class="wizard-step-text-name">Simulación</div>
-                                    <div class="wizard-step-text-details">Tabla de amortización</div>
+                                    <div class="wizard-step-text-details">Tabla de amortización 30 Días</div>
+                                </div>
+                            </a>
+                            <!-- Wizard navigation item 4-->
+                            <a class="nav-item nav-link" id="wizard4-tab" href="#wizard4" data-bs-toggle="tab"
+                                role="tab" aria-controls="wizard4" aria-selected="true" disabled="true">
+                                <div class="wizard-step-icon">3</div>
+                                <div class="wizard-step-text">
+                                    <div class="wizard-step-text-name">Simulación</div>
+                                    <div class="wizard-step-text-details">Tabla de amortización - 15 Días</div>
                                 </div>
                             </a>
                             <!-- Wizard navigation item 3-->
                             <a class="nav-item nav-link" id="wizard3-tab" href="#wizard3" data-bs-toggle="tab"
-                                role="tab" aria-controls="wizard3" aria-selected="true">
-                                <div class="wizard-step-icon">3</div>
+                                role="tab" aria-controls="wizard3" aria-selected="true" disabled="true">
+                                <div class="wizard-step-icon">4</div>
                                 <div class="wizard-step-text">
                                     <div class="wizard-step-text-name">Formulario de solicitud</div>
                                     <div class="wizard-step-text-details">Complete sus datos para ponernos en contacto
@@ -125,7 +135,7 @@
                                                 <input class="btn btn-lg btn-warning" type="button" id="btn-calcular"
                                                     value="Calcular">
                                             </div>
-                                            <!--</form>-->
+
                                     </div>
                                 </div>
                             </div>
@@ -136,10 +146,10 @@
                                     <div class="col-xxl-14 col-xl-14">
                                         <h3 class="text-primary"></h3>
                                         <h5 class="card-title mb-4"></h5>
-
                                         <div class="container-x1 px-1 mt-n9">
                                             <div class="card mb-4">
                                                 <div class="card-header">Amortización</div>
+
                                                 <div class="card-body">
                                                     <div
                                                         class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
@@ -186,16 +196,98 @@
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
-
                                                                 <tbody>
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                     </div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <a onclick="javascript: window.history.back();"
+                                                            class="btn btn-muted" type="button"></a>
+                                                        <!-- <button class="btn btn-warning" type="button" id="btn-calcular">Calcular</button> -->
+                                                        <input class="btn btn-warning" type="button" id="btn-next"
+                                                            value="Siguiente">
+                                                        </input>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Wizard tab pane item 4-->
+                            <div class="tab-pane py-6 py-xl-9 fade" id="wizard4" role="tabpanel"
+                                aria-labelledby="wizard4-tab">
+                                <div class="row justify-content-center">
+                                    <div class="col-xxl-14 col-xl-14">
+                                        <h3 class="text-primary"></h3>
+                                        <h5 class="card-title mb-4"></h5>
+                                        <div class="container-x1 px-1 mt-n9">
+                                            <div class="card mb-4">
+                                                <div class="card-header">Amortización</div>
 
+                                                <div class="card-body">
+                                                    <div
+                                                        class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+
+                                                        <div class="dataTable-container">
+                                                            <table id="tabla-amortizacion" class="dataTable-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th data-sortable="" style="width: auto"><a
+                                                                                href="#"
+                                                                                class="dataTable-sorter">NO.</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">FECHA</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href="#"
+                                                                                class="dataTable-sorter">CUOTA</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">AB.CAPITAL</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">AB.INTERES</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter">SDO.CAPITAL</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter"><span
+                                                                                    id="val_seg">0</span>% -
+                                                                                SEGUR</a>
+                                                                        </th>
+                                                                        <th data-sortable=""
+                                                                            style="text-align: center;"><a href=" #"
+                                                                                class="dataTable-sorter"><span
+                                                                                    id="val_fondo">0</span>% -
+                                                                                FOND</a>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <a onclick="javascript: window.history.back();"
+                                                            class="btn btn-muted" type="button"></a>
+                                                        <!-- <button class="btn btn-warning" type="button" id="btn-calcular">Calcular</button> -->
+                                                        <input class="btn btn-warning" type="button" id="btn-info"
+                                                            value="Siguiente">
+                                                        </input>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -221,7 +313,8 @@
                                         <div class="row gx-3">
                                             <div class="mb-3 col-md-6">
                                                 <label class="small mb-1" for="TypeDocument"
-                                                    id="TypeDocument">Seleccione tipo de
+                                                    id="TypeDocument">Seleccione tipo
+                                                    de
                                                     documento</label>
                                                 <select class="form-select" aria-label="Default select example"
                                                     name="typeDocument">
@@ -255,7 +348,8 @@
                                         </div>
                                         <hr class="my-4" />
                                         <div class="d-flex justify-content-between">
-                                            <button class="btn btn-light disabled" type="button">Volver</button>
+                                            <a onclick="javascript: window.history.back();" class="btn btn-muted"
+                                                type="button"></a>
                                             <input class="btn btn-warning" type="submit" value="Finalizar"
                                                 name="enviar"></input>
                                         </div>
@@ -266,6 +360,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -293,22 +388,74 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+
+        function changeTab1() {
+            var notNext = document.getElementById("wizard2-tab")
+            notNext.disabled = false;
+        }
+
+        function changeTab2(){
+            var notNext2 = document.getElementById("wizard3-tab")
+            notNext2.disabled = false;
+        }
+
+        function changeTab3() {
+            var notNext3 = document.getElementById("wizard4-tab")
+            notNext3.disabled = false;
+        }
+
         var monto_max = 0;
         var plazos = 0;
         var tasa = 0;
         var fondo_mutual = 0;
         var seguro_linea = 0;
+        var next =
 
-        $('#btn-calcular').click(function (event) {
+            $('#btn-calcular').click(function (event) {
 
+                changeTab1();
+                event.preventDefault();
+
+                if ($("#form-simulacion1")[0].checkValidity()) {
+
+                    //console.log(tasa);
+                    setAmortizacion30Day();
+
+                    $("#wizard2-tab")[0].click();
+
+                } else
+                    $("#form-simulacion1")[0].reportValidity()
+            });
+
+        $('#btn-info').click(function (event) {
+
+            changeTab2();
             event.preventDefault();
 
             if ($("#form-simulacion1")[0].checkValidity()) {
 
                 //console.log(tasa);
-                setAmortizacion();
+                //setAmortizacion();
 
-                $("#wizard2-tab")[0].click();
+                $("#wizard3-tab")[0].click();
+
+
+            } else
+                $("#form-simulacion1")[0].reportValidity()
+        });
+
+        $('#btn-next').click(function (event) {
+
+            changeTab3();
+            event.preventDefault();
+
+            if ($("#form-simulacion1")[0].checkValidity()) {
+
+                //console.log(tasa);
+                setAmortizacion15Day();
+
+                $("#wizard4-tab")[0].click();
+
 
             } else
                 $("#form-simulacion1")[0].reportValidity()
@@ -345,7 +492,7 @@
         });
 
 
-        function setAmortizacion() {
+        function setAmortizacion30Day() {
             var tabla = $('#tabla-amortizacion tbody');
             var plazo = $('#plazoCredito').val();
             var monto = $('#montoCredito').val();
@@ -407,6 +554,67 @@
 
         }
 
+        function setAmortizacion15Day() {
+            var tabla = $('#tabla-amortizacion tbody');
+            var plazo = $('#plazoCredito').val();
+            var monto = $('#montoCredito').val();
+
+            var filas = "";
+            var fecha = moment().format("DD/MM/YYYY");
+
+            var cuota_fija = 0;
+            var cuota = 0;
+            var saldo = monto;
+            var abono_capital = 0;
+            var abono_interes = 0;
+            var fee_fondo_mutual = 0;
+            var fee_seguro = 0;
+
+            tasa = tasa / 100;
+
+            cuota_fija = calculateFixedFee(monto, tasa, plazo);
+            //fee_fondo_mutual = 
+
+
+            filas += '<tr>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">' + fecha + '</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">' + currency(saldo) + '</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '<td style="text-align: right;">0</td>' +
+                '</tr>';
+
+            for (x = 1; x <= plazo; x++) {
+
+                // aquí calcular las variables
+                abono_interes = saldo * tasa;
+                abono_capital = cuota_fija - abono_interes;
+                fee_seguro = saldo * (seguro_linea / 100);
+                fee_fondo_mutual = saldo * (fondo_mutual / 100);
+
+                saldo = saldo - abono_capital;
+                fecha = moment().add(x * 15, 'days').format("DD/MM/YYYY");
+
+                filas += '<tr>' +
+                    '<td style="text-align: right;">' + x + '</td>' +
+                    '<td style="text-align: right;">' + fecha + '</td>' +
+                    '<td style="text-align: right;">' + currency(cuota_fija) + '</td>' +
+                    '<td style="text-align: right;">' + currency(abono_capital) + '</td>' +
+                    '<td style="text-align: right;">' + currency(abono_interes) + '</td>' +
+                    '<td style="text-align: right;">' + currency(saldo) + '</td>' +
+                    '<td style="text-align: right;">' + currency(fee_seguro) + '</td>' +
+                    '<td style="text-align: right;">' + currency(fee_fondo_mutual) + '</td>' +
+                    '</tr>';
+
+                monto = monto - cuota;
+            }
+
+            tabla.html(filas);
+
+        }
 
         function calculateFixedFee(monto, tasa, plazo) {
 
