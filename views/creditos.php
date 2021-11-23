@@ -56,7 +56,7 @@
                             </a>
                             <!-- Wizard navigation item 2-->
                             <a class="nav-item nav-link" id="wizard2-tab" href="#wizard2" data-bs-toggle="tab"
-                                role="tab" aria-controls="wizard2" aria-selected="true" disabled="true">
+                                role="tab" aria-controls="wizard2" aria-selected="true" disabled="true" onclick="setAmortizacion30Day();">
                                 <div class="wizard-step-icon">2</div>
                                 <div class="wizard-step-text">
                                     <div class="wizard-step-text-name">Simulación</div>
@@ -65,11 +65,12 @@
                             </a>
                             <!-- Wizard navigation item 4-->
                             <a class="nav-item nav-link" id="wizard4-tab" href="#wizard4" data-bs-toggle="tab"
-                                role="tab" aria-controls="wizard4" aria-selected="true" disabled="true">
+                                role="tab" aria-controls="wizard4" aria-selected="true" disabled="true" onclick="setAmortizacion15Day();">
                                 <div class="wizard-step-icon">3</div>
                                 <div class="wizard-step-text">
                                     <div class="wizard-step-text-name">Simulación</div>
                                     <div class="wizard-step-text-details">Tabla de amortización - 15 Días</div>
+                    
                                 </div>
                             </a>
                             <!-- Wizard navigation item 3-->
