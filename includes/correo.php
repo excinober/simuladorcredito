@@ -45,10 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail = new PHPMailer;
         $mail->isSMTP();
         $mail->Host = "email-smtp.us-west-2.amazonaws.com";  // Indicamos los servidores SMTP
-        $mail->SMTPAuth = true;                               // Habilitamos la autenticación SMTP
-        $mail->Username = "AKIATSW7M2FVT3NYREPS";                 // SMTP username
-        $mail->Password = "BLtJj1SQ3CymZOBeEYhsuUyPa5V3nVqDCdf7Ia/y24Z7";                    // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Habilitar encriptación TLS o SSL
+	$mail->SMTPAuth = true;                               // Habilitamos la autenticación SMTP
+	$mail->Username = "AKIATSW7M2FVT3NYREPS";                 // SMTP username
+	$mail->Password = "BLtJj1SQ3CymZOBeEYhsuUyPa5V3nVqDCdf7Ia/y24Z7";                    // SMTP password
+	$mail->SMTPSecure = 'tls';                            // Habilitar encriptación TLS o SSL
         $mail->Port = 587;
         //Set who the message is to be sent from
         $mail->setFrom($email, $names);
@@ -75,8 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             window.location.href="/Simulacion"; </script>';
 
         }else{
-            echo $mail->ErrorInfo;
-        }
+           echo $mail->ErrorInfo;
+	}
 
     } else {
         echo '<script type="text/javascript">
