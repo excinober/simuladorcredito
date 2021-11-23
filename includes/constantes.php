@@ -1,7 +1,7 @@
 <?php 
 
-define("URL_SITIO", "http://localhost/simuladorcredito/Simulacion");
-//define("URL_SITIO", "https://admin.fonaviemcali.com.co/");
+//define("URL_SITIO", "http://localhost/simuladorcredito/");
+define("URL_SITIO", "https://simulador.fonaviemcali.com.co/");
 define("URL_INICIO", "Inicio");
 define("URL_PRODUCTOS", "Productos");
 define("URL_CATEGORIAS", "Categorias");

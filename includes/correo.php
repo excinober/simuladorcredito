@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         OR empty($_POST['phone'])) {
             echo '<script type="text/javascript">
         alert("Por favor verifique la información");
-        window.location.href="creditos.php";
+        window.location.href="/Simulacion";
         </script>';
 
             exit;
@@ -71,20 +71,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($success) {
             echo '<script type="text/javascript">
         alert("Se envio exitosamente");
-        window.location.href="creditos.php";
+        window.location.href="/Simulacion";
         </script>';
 
         } else {
             echo '<script type="text/javascript">
         alert("Ups, algo ha salido mal, no pudimos enviar tu mensaje");
-        window.location.href="creditos.php";
+        window.location.href="/Simulacion";
         </script>';
 
         }
     } else {
         echo '<script type="text/javascript">
         alert("Hubo un problema con tu envio, intentalo nuevamente");
-        window.location.href="creditos.php";
+        window.location.href="/Simulacion";
         </script>';
     }
 

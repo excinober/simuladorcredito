@@ -13,25 +13,25 @@ class Database {
   {
 
 
-    $this->conexion = new PDO(
-        'mysql:host=localhost;dbname=fonaviemcali',
+    /*$this->conexion = new PDO(
+        'mysql:host=localhost;dbname=fonaviemcali2',
         'root',
         '',
         array(
             PDO::ATTR_PERSISTENT => false
           )
-    );
+    );*/
    
    
  
-    /*$this->conexion = new PDO(
+    $this->conexion = new PDO(
     'mysql:host=localhost;dbname=fonaviem_nuevo',
     'fonaviem_fonaviemcali',
     'M^V=Z2D-=!#&',
     array(
         PDO::ATTR_PERSISTENT => false
       )
-    );*/
+    );
 
   
 

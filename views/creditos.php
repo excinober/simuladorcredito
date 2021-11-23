@@ -29,9 +29,8 @@
                                     <div class="page-header-icon"><i data-feather="arrow-right-circle"></i></div>
                                     Simulador de crédito
                                 </h1>
-                                <div class="page-header-subtitle">Con esta herramienta podrás simular financiamientos,
-                                    para obtener cuánto terminarías pagando por un crédito, así como una tabla de
-                                    amortización para tu referencia.</div>
+                                <div class="page-header-subtitle">Con esta herramienta podrás simular fácilmente las cuotas de tu crédito, y conocer cuánto pagarás mes a mes o quincena a quincena.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -51,7 +50,7 @@
                                 <div class="wizard-step-icon">1</div>
                                 <div class="wizard-step-text">
                                     <div class="wizard-step-text-name">Detalles del credito</div>
-                                    <div class="wizard-step-text-details">Información de su préstamo</div>
+                                    <div class="wizard-step-text-details">Información de tu préstamo</div>
                                 </div>
                             </a>
                             <!-- Wizard navigation item 2-->
@@ -59,7 +58,7 @@
                                 role="tab" aria-controls="wizard2" aria-selected="true" disabled="true" onclick="setAmortizacion30Day();">
                                 <div class="wizard-step-icon">2</div>
                                 <div class="wizard-step-text">
-                                    <div class="wizard-step-text-name">Simulación</div>
+                                    <div class="wizard-step-text-name">Simulación Mensual</div>
                                     <div class="wizard-step-text-details">Tabla de amortización 30 Días</div>
                                 </div>
                             </a>
@@ -68,8 +67,8 @@
                                 role="tab" aria-controls="wizard4" aria-selected="true" disabled="true" onclick="setAmortizacion15Day();">
                                 <div class="wizard-step-icon">3</div>
                                 <div class="wizard-step-text">
-                                    <div class="wizard-step-text-name">Simulación</div>
-                                    <div class="wizard-step-text-details">Tabla de amortización - 15 Días</div>
+                                    <div class="wizard-step-text-name">Simulación Quincenal</div>
+                                    <div class="wizard-step-text-details">Tabla de amortización 15 Días</div>
                     
                                 </div>
                             </a>
@@ -122,7 +121,7 @@
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label class="small mb-1" for="plazoCredito">Ingrese el número de
-                                                        cuotas que desea pagar</label>
+                                                        meses en los que desea pagar</label>
                                                     <input class="form-control" id="plazoCredito" type="number"
                                                         placeholder="48" value="" min="0" name="plazo" required />
                                                 </div>
@@ -207,7 +206,7 @@
                                                             class="btn btn-muted" type="button"></a>
                                                         <!-- <button class="btn btn-warning" type="button" id="btn-calcular">Calcular</button> -->
                                                         <input class="btn btn-warning" type="button" id="btn-next"
-                                                            value="Siguiente">
+                                                            value="Ver simulación quincenal">
                                                         </input>
                                                     </div>
                                                 </div>
@@ -283,7 +282,7 @@
                                                             class="btn btn-muted" type="button"></a>
                                                         <!-- <button class="btn btn-warning" type="button" id="btn-calcular">Calcular</button> -->
                                                         <input class="btn btn-warning" type="button" id="btn-info"
-                                                            value="Siguiente">
+                                                            value="Enviar solicitud">
                                                         </input>
                                                     </div>
                                                 </div>
@@ -329,7 +328,7 @@
                                                 <label class="small mb-1" for="inputUsername">Numero de
                                                     documento</label>
                                                 <input class="form-control" id="inputNumberDocument" type="number"
-                                                    name="numberDocument" placeholder="Introduzca numero de documento"
+                                                    name="numberDocument" placeholder="Introduzca número de documento"
                                                     value="" />
                                             </div>
                                         </div>
@@ -338,7 +337,7 @@
                                                 <label class="small mb-1" for="inputPhone">Numero de
                                                     telefono</label>
                                                 <input class="form-control" id="inputPhone" type="tel" name="phone"
-                                                    placeholder="Introduzca un numero de telefono" value="" />
+                                                    placeholder="Introduzca un número de telefono" value="" />
                                             </div>
                                             <div class="col-md-6 mb-0">
                                                 <label class="small mb-1" for="inputEmail">Correo
@@ -372,9 +371,8 @@
                 <div class="row">
                     <div class="col-md-6 small">Copyright &copy; FONAVIEMCALI 2021</div>
                     <div class="col-md-6 text-md-end small">
-                        <a href="#!">Politica de privacidad</a>
-                        &middot;
-                        <a href="#!">Terminos &amp; Condiciones</a>
+                        Sitio desarrollado por
+                        <a href="https://cohett.com" target="_new">Cohett</a>
                     </div>
                 </div>
             </div>
