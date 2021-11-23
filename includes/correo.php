@@ -28,7 +28,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $mail_to = "deiby.developer@gmail.com";
+        $mail_to = "ebenitesg@gmail.com";
         $credito= ($_POST["credito"]);
         $monto = ($_POST["monto"]);
         $plazo = ($_POST["plazo"]);
