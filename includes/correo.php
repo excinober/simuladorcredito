@@ -75,10 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             window.location.href="/Simulacion"; </script>';
 
         }else{
-            echo '<script type="text/javascript">
-            alert("Ups, algo ha salido mal, no pudimos enviar tu mensaje");
-            window.location.href="/Simulacion";
-            </script>';
+            echo $mail->ErrorInfo;
         }
 
     } else {
