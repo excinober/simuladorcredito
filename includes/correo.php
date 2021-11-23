@@ -1,30 +1,5 @@
 <?php
-
-/*if (isset($_POST['enviar'])) {
-
-        if (!empty($_POST['names']) && 
-        !empty($_POST['lastname']) && 
-        !empty($_POST['typeDocument']) && 
-        !empty($_POST['numberDocument']) && 
-        !empty($_POST['phone']) && 
-        !empty($_POST['email'])) {
-            
-        $names = $_POST['names'];
-        $lastname = $_POST['lastname'];
-        $typeDocument = $_POST['numberDocument'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-
-        $header = "From: deibyrayo95@gmail.com" . "\r\n";
-        $header.= "Reply-To: deibyrayo95@gmail.com". "\r\n";
-        $header.= "X-Mailer: PHP/". phpversion();
-        $mail = @mail($email,$names,$lastname,$typeDocument,$phone);
-        if ($email) {
-            echo "<h4>¡Correo enviado exitosamente!<h4></h4>";
-        }
-    }
-}*/
-
+use PHPMailer\PHPMailer\PHPMailer;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -53,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             exit;
         }
-        
+
         $content = "<p>Credito: $credito <br>";
         $content .= "Monto: $monto <br>";
         $content .= "Plazo: $plazo <br>";
@@ -64,25 +39,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $content .= "Numero telefono:$phone <br>";
         $content .= "E-mail: $email <br>";
 
-        $header = "From: $name <$email> \r\n";
-        $header .= "MIME-Version: 1.0\r\n";
-        $header .= "Content-type: text/html\r\n";
+        require_once 'PHPMailer/vendor/autoload.php';
 
-        $success = mail($mail_to, "Solicitud de credito", $content, $headers);
+        //Create a new PHPMailer instance
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->Host = "email-smtp.us-west-2.amazonaws.com";  // Indicamos los servidores SMTP
+        $mail->SMTPAuth = true;                               // Habilitamos la autenticación SMTP
+        $mail->Username = "AKIATSW7M2FVT3NYREPS";                 // SMTP username
+        $mail->Password = "BLtJj1SQ3CymZOBeEYhsuUyPa5V3nVqDCdf7Ia/y24Z7";                    // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Habilitar encriptación TLS o SSL
+        $mail->Port = 587;
+        //Set who the message is to be sent from
+        $mail->setFrom($email, $names);
+        //Set an alternative reply-to address
+        //$mail->addReplyTo('replyto@example.com', 'First Last');
+        //Set who the message is to be sent to
+        $mail->addAddress("ebenitesg@gmail.com", "Excinober Benites");
+        //Set the subject line
+        $mail->Subject = "Solicitud de crédito";
+        //Read an HTML message body from an external file, convert referenced images to embedded,
+        //convert HTML into a basic plain-text alternative body
+        $mail->msgHTML($content);
+        //Replace the plain text body with one created manually
+        //$mail->AltBody = 'This is a plain-text message body';
+        //Attach an image file
+        //$mail->addAttachment('images/phpmailer_mini.png');
+        //$mail->setLanguage('es');
+        $mail->setLanguage('es');
+        $mail->CharSet = 'UTF-8';
 
-        if ($success) {
+        if ($mail->send()) {
             echo '<script type="text/javascript">
-        alert("Se envio exitosamente");
-        window.location.href="/Simulacion";
-        </script>';
+            alert("La solicitud fue enviada, pronto te contactaremos!");
+            window.location.href="/Simulacion"; </script>';
 
-        } else {
+        }else{
             echo '<script type="text/javascript">
-        alert("Ups, algo ha salido mal, no pudimos enviar tu mensaje");
-        window.location.href="/Simulacion";
-        </script>';
-
+            alert("Ups, algo ha salido mal, no pudimos enviar tu mensaje");
+            window.location.href="/Simulacion";
+            </script>';
         }
+
     } else {
         echo '<script type="text/javascript">
         alert("Hubo un problema con tu envio, intentalo nuevamente");
