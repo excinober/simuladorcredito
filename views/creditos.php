@@ -409,23 +409,22 @@
         var tasa = 0;
         var fondo_mutual = 0;
         var seguro_linea = 0;
-        var next =
 
-            $('#btn-calcular').click(function (event) {
+        $('#btn-calcular').click(function (event) {
 
-                changeTab1();
-                event.preventDefault();
+            changeTab1();
+            event.preventDefault();
 
-                if ($("#form-simulacion1")[0].checkValidity()) {
+            if ($("#form-simulacion1")[0].checkValidity()) {
 
-                    //console.log(tasa);
-                    setAmortizacion30Day();
+                //console.log(tasa);
+                setAmortizacion30Day();
 
-                    $("#wizard2-tab")[0].click();
+                $("#wizard2-tab")[0].click();
 
-                } else
-                    $("#form-simulacion1")[0].reportValidity()
-            });
+            } else
+                $("#form-simulacion1")[0].reportValidity()
+        });
 
         $('#btn-info').click(function (event) {
 
@@ -507,10 +506,9 @@
             var abono_interes = 0;
             var fee_fondo_mutual = 0;
             var fee_seguro = 0;
+            let tasa2 = convertTasa(tasa, 12);
 
-            tasa = tasa / 100;
-
-            cuota_fija = calculateFixedFee(monto, tasa, plazo);
+            cuota_fija = calculateFixedFee(monto, tasa2, plazo);
             //fee_fondo_mutual = 
 
 
@@ -528,18 +526,19 @@
             for (x = 1; x <= plazo; x++) {
 
                 // aquí calcular las variables
-                abono_interes = saldo * tasa;
+                abono_interes = saldo * tasa2;
                 abono_capital = cuota_fija - abono_interes;
                 fee_seguro = saldo * (seguro_linea / 100);
                 fee_fondo_mutual = saldo * (fondo_mutual / 100);
 
                 saldo = saldo - abono_capital;
+                cuota = abono_capital + abono_interes + fee_seguro + fee_fondo_mutual;
                 fecha = moment().add(x, 'M').format("DD/MM/YYYY");
 
                 filas += '<tr>' +
                     '<td style="text-align: right;">' + x + '</td>' +
                     '<td style="text-align: right;">' + fecha + '</td>' +
-                    '<td style="text-align: right;">' + currency(cuota_fija) + '</td>' +
+                    '<td style="text-align: right;">' + currency(cuota) + '</td>' +
                     '<td style="text-align: right;">' + currency(abono_capital) + '</td>' +
                     '<td style="text-align: right;">' + currency(abono_interes) + '</td>' +
                     '<td style="text-align: right;">' + currency(saldo) + '</td>' +
@@ -556,7 +555,7 @@
 
         function setAmortizacion15Day() {
             var tabla = $('#tabla-amortizacion tbody');
-            var plazo = $('#plazoCredito').val();
+            var plazo = ($('#plazoCredito').val())*2;
             var monto = $('#montoCredito').val();
 
             var filas = "";
@@ -569,10 +568,9 @@
             var abono_interes = 0;
             var fee_fondo_mutual = 0;
             var fee_seguro = 0;
+            let tasa2 = convertTasa(tasa, 24);
 
-            tasa = tasa / 100;
-
-            cuota_fija = calculateFixedFee(monto, tasa, plazo);
+            cuota_fija = calculateFixedFee(monto, tasa2, plazo);
             //fee_fondo_mutual = 
 
 
@@ -590,18 +588,19 @@
             for (x = 1; x <= plazo; x++) {
 
                 // aquí calcular las variables
-                abono_interes = saldo * tasa;
+                abono_interes = saldo * tasa2;
                 abono_capital = cuota_fija - abono_interes;
-                fee_seguro = saldo * (seguro_linea / 100);
-                fee_fondo_mutual = saldo * (fondo_mutual / 100);
+                fee_seguro = (saldo * (seguro_linea / 100))/2;
+                fee_fondo_mutual = (saldo * (fondo_mutual / 100))/2;
 
                 saldo = saldo - abono_capital;
+                cuota = abono_capital + abono_interes + fee_seguro + fee_fondo_mutual;
                 fecha = moment().add(x * 15, 'days').format("DD/MM/YYYY");
 
                 filas += '<tr>' +
                     '<td style="text-align: right;">' + x + '</td>' +
                     '<td style="text-align: right;">' + fecha + '</td>' +
-                    '<td style="text-align: right;">' + currency(cuota_fija) + '</td>' +
+                    '<td style="text-align: right;">' + currency(cuota) + '</td>' +
                     '<td style="text-align: right;">' + currency(abono_capital) + '</td>' +
                     '<td style="text-align: right;">' + currency(abono_interes) + '</td>' +
                     '<td style="text-align: right;">' + currency(saldo) + '</td>' +
@@ -627,6 +626,10 @@
                 currency: 'COP',
                 minimumFractionDigits: 2
             }).format(value);
+        }
+
+        function convertTasa(tasa_anual, periodos) {
+            return (tasa_anual/periodos) / 100;
         }
     </script>
 
