@@ -44,18 +44,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Create a new PHPMailer instance
         $mail = new PHPMailer;
         $mail->isSMTP();
-        $mail->Host = "email-smtp.us-west-2.amazonaws.com";  // Indicamos los servidores SMTP
+        //$mail->Host = "email-smtp.us-west-2.amazonaws.com";  // Indicamos los servidores SMTP
+        $mail->Host = "smtp.gmail.com";  // Indicamos los servidores SMTP
         $mail->SMTPAuth = true;                               // Habilitamos la autenticación SMTP
-        $mail->Username = "AKIATSW7M2FVT3NYREPS";                 // SMTP username
-        $mail->Password = "BLtJj1SQ3CymZOBeEYhsuUyPa5V3nVqDCdf7Ia/y24Z7";                    // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Habilitar encriptación TLS o SSL
-        $mail->Port = 587;
+        //$mail->Username = "AKIATSW7M2FVT3NYREPS";                 // SMTP username
+        $mail->Username = "ebenitesg@gmail.com";                 // SMTP username
+        //$mail->Password = "BLtJj1SQ3CymZOBeEYhsuUyPa5V3nVqDCdf7Ia/y24Z7";                    // SMTP password
+        $mail->Password = "princesa16";                    // SMTP password
+        $mail->SMTPSecure = 'SSL';                            // Habilitar encriptación TLS o SSL
+        $mail->Port = 465;
         //Set who the message is to be sent from
         $mail->setFrom($email, $names);
         //Set an alternative reply-to address
         //$mail->addReplyTo('replyto@example.com', 'First Last');
         //Set who the message is to be sent to
-        $mail->addAddress("ebenitesg@gmail.com", "Excinober Benites");
+        $mail->addAddress("gerencia@cohett.com", "Excinober Benites");
         //Set the subject line
         $mail->Subject = "Solicitud de crédito";
         //Read an HTML message body from an external file, convert referenced images to embedded,
