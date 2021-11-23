@@ -51,11 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail->SMTPSecure = 'tls';                            // Habilitar encriptación TLS o SSL
         $mail->Port = 587;
         //Set who the message is to be sent from
-        $mail->setFrom($email, $names);
+        $mail->setFrom("no-reply@cohett.com", "Simulador Crédito");
         //Set an alternative reply-to address
         //$mail->addReplyTo('replyto@example.com', 'First Last');
         //Set who the message is to be sent to
-        $mail->addAddress("gerencia@cohett.com", "Excinober Benites");
+        $mail->addAddress("ebenitesg@gmail.com", "Excinober Benites");
         //Set the subject line
         $mail->Subject = "Solicitud de crédito";
         //Read an HTML message body from an external file, convert referenced images to embedded,
