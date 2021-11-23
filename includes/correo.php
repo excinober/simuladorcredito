@@ -29,9 +29,9 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $mail_to = "ebenitesg@gmail.com";
-        $credito= ($_POST["credito"]);
-        $monto = ($_POST["monto"]);
-        $plazo = ($_POST["plazo"]);
+        $credito= $_POST["credito"];
+        $monto = $_POST["monto"];
+        $plazo = $_POST["plazo"];
         $lastname = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["lastname"])));
         $names = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["names"])));
         $typeDocument = trim($_POST["typeDocument"]);
@@ -54,17 +54,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
         
-        $content = "Credito: $credito\n";
-        $content = "Monto: $monto\n";
-        $content = "Plazo: $plazo\n";
-        $content = "Nombres: $names\n";
-        $content .= "Apellidos:$lastname\n";
-        $content .= "Tipo de documento:$typeDocument\n";
-        $content .= "Numero de documento:$numberDocument\n";
-        $content .= "Numero telefono:$phone\n";
-        $content .= "E-mail: $email\n\n";
-        
-        $headers = "From: $name <$email>";
+        $content = "<p>Credito: $credito <br>";
+        $content .= "Monto: $monto <br>";
+        $content .= "Plazo: $plazo <br>";
+        $content .= "Nombres: $names <br>";
+        $content .= "Apellidos:$lastname <br>";
+        $content .= "Tipo de documento:$typeDocument <br>";
+        $content .= "Numero de documento:$numberDocument <br>";
+        $content .= "Numero telefono:$phone <br>";
+        $content .= "E-mail: $email <br>";
+
+        $header = "From: $name <$email> \r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type: text/html\r\n";
 
         $success = mail($mail_to, "Solicitud de credito", $content, $headers);
 
